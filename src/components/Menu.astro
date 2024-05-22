@@ -1,147 +1,252 @@
-
 <script>
-const onLoad = () => {
-  const burgerMenu = document.querySelector("#burger-menu");
-  const menu = document.querySelector("#menu");
+  const onLoad = () => {
+    const burgerMenu = document.querySelector("#burger-menu");
+    const menu = document.querySelector("#menu");
 
-  if (burgerMenu && menu) {
-    burgerMenu.addEventListener("click", function () {
-      console.log("Burger menu clicked");
-      burgerMenu.classList.toggle("close");
-      menu.classList.toggle("overlay");
-    });
-  }
-};
+    if (burgerMenu && menu) {
+      burgerMenu.addEventListener("click", function () {
+        console.log("Burger menu clicked");
+        burgerMenu.classList.toggle("close");
+        menu.classList.toggle("overlay");
+      });
+    }
+  };
 
-onLoad(); 
+  onLoad();
 </script>
 
+<header>
+  <div class="grid">
+    <button id="burger-menu">
+      <span></span>
+    </button>
 
-<button id="burger-menu">
+    <a href="Index.astro"><p>BALCOmBE</p></a>
 
-  <span></span>
-</button>
+    <div class="ikoner">
+      <button class="search">SEARCH</button>
+      <a href="Login.astro"><img src="/login.svg" alt="" /></a>
+      <a href="Saved.astro"><img src="/hjerte.svg" alt="" /></a>
+      <a href="Cart.astro"><img src="/cart.svg" alt="" /></a>
+    </div>
 
-
-<nav id="menu">
-  <ul>
-    <li><a href="#">SEARCH</a></li>
-    <li><a href="allitems.astro">SHOP</a></li>
-    <li><a href="About.astro">ABOUT</a></li>
-  </ul>
-</nav>
+    <nav id="menu">
+      <ul>
+        <li><button class="search2">SEARCH</button></li>
+        <li><a href="allitems.astro">SHOP</a></li>
+        <li><a href="About.astro">ABOUT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
 <style>
+  .search2 {
+    display: none;
+  }
+  button {
+    border-color: #000000;
 
-#logo {
-display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: Avenir Next;
+    margin-bottom: 58px;
+  }
 
-
-}
-
-#burger-menu {
-  text-indent: -9999px;
-  border: none;
-  background: transparent;
-  margin: 25px;
-  cursor: pointer;
-  height: 27px;
-  width: 27px;
-  position: relative;
-  z-index: 2;
-  padding: 10px;
-}
-
-#burger-menu img {
-  height: auto;
-  width: 100px; 
-  display: block; 
-}
-
-@media screen and (max-width: 800px) {
-  #burger-menu {
-    display: block;
-  }
-  #burger-menu span,
-  #burger-menu span:before,
-  #burger-menu span:after {
-    background: #000000;
-    display: block;
-    height: 3px;
-    position: absolute;
-    transition: 0.3s ease-in-out;
-    content: "";
-  }
-  #burger-menu span:before {
-    left: 0px;
-    top: -10px;
-    width: 27px;
-  }
-  #burger-menu span {
-    right: 0px;
-    top: 13px;
-    width: 27px;
-  }
-  #burger-menu span:after {
-    left: 0px;
-    top: 10px;
-    width: 27px;
-    border: #000000;
-  }
-  #burger-menu.close span:before {
-    top: 0px;
-    transform: rotate(90deg);
-    width: 27px;
-    background: #000000;
-    border: #000000;
-  }
-  #burger-menu.close span {
-    transform: rotate(-45deg);
-    top: 13px;
-    width: 27px;
-    background: #000000;
-    border: #000000;
-  }
-  #burger-menu.close span:after {
-    top: 0px;
-    left: 0;
-    transform: rotate(90deg);
-    opacity: 0;
-    width: 0;
-    background: #000000;
-  }
-  #menu {
-    z-index: 1;
-    min-width: 100%;
-    min-height: 100%;
-    position: fixed;
-    top: 0;
-    height: 0;
-    visibility: hidden;
-     opacity: 0;
-    text-align: center;
-    padding-top: 20px;
-    transition: all 0.3s ease-in-out;
-  }
-  #menu.overlay {
-    visibility: visible;
-    opacity: 1;
-    padding-top: 100px;
-    background: #FFFFFF
-  }
-  #menu ul {
-    padding: 0;
-  }
-  #menu li {
-    list-style: none;
-    display: initial;
-  }
-  #menu a {
+  button:hover {
     color: #ab1f27;
-    display: block;
-    font-size: 32px;
-    margin-bottom: 30px;
-    text-decoration: none;
   }
-}
+  header {
+  }
+
+  a {
+    color: #000000;
+  }
+  a:hover {
+    color: #ab1f27;
+  }
+
+  img:hover {
+    color: #ffffff;
+  }
+  .grid {
+    display: flex;
+  }
+
+  p {
+    display: block;
+    font-size: 1.5rem;
+    font-family: Neon Vampire;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8.5625rem;
+    z-index: 2;
+  }
+  .ikoner {
+    display: block;
+    position: absolute;
+    margin-top: 22px;
+    right: 35px;
+    z-index: 2;
+  }
+
+  #logo {
+    display: flex;
+  }
+
+  #burger-menu {
+    text-indent: -9999px;
+    border: none;
+    background: transparent;
+    margin: 25px;
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+  }
+
+  #burger-menu img {
+    height: auto;
+    width: 100px;
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    font-family: Avenir Next;
+  }
+
+  #menu a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  #menu a:hover {
+    color: #ab1f27;
+    transition: 0.1s;
+  }
+
+  #menu {
+    margin-left: -110px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .search2 {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul {
+      list-style: none;
+      display: block;
+      gap: 20px;
+      font-size: 20px;
+      font-family: Avenir Next;
+    }
+    .search {
+      display: none;
+    }
+    a {
+      color: #000000;
+      font-family: Avenir Next;
+      font-size: 100pxx;
+    }
+    .search {
+      border-color: #000000;
+    }
+    #burger-menu {
+      display: block;
+    }
+    #burger-menu span,
+    #burger-menu span:before,
+    #burger-menu span:after {
+      background: #000000;
+      display: block;
+      height: 3px;
+      position: absolute;
+      content: "";
+    }
+    #burger-menu span:before {
+      left: 0px;
+      top: -10px;
+      width: 27px;
+    }
+    #burger-menu span {
+      right: 0px;
+      top: 13px;
+      width: 27px;
+    }
+    #burger-menu span:after {
+      left: 0px;
+      top: 10px;
+      width: 27px;
+      border: #000000;
+    }
+    #burger-menu.close span:before {
+      top: 0px;
+      transform: rotate(90deg);
+      width: 27px;
+      background: #000000;
+      border: #000000;
+    }
+    #burger-menu.close span {
+      transform: rotate(-45deg);
+      top: 13px;
+      width: 27px;
+      background: #000000;
+      border: #000000;
+    }
+    #burger-menu.close span:after {
+      top: 0px;
+      left: 0;
+      transform: rotate(90deg);
+      opacity: 0;
+      width: 0;
+      background: #000000;
+    }
+    #menu {
+      z-index: 1;
+      min-width: 100%;
+      min-height: 300px;
+      position: fixed;
+      top: 0;
+      height: 0;
+      visibility: hidden;
+      opacity: 0;
+      text-align: center;
+      padding-top: 20px;
+      margin-left: 0;
+
+      left: 0;
+    }
+    #menu.overlay {
+      visibility: visible;
+      opacity: 1;
+      padding-top: 100px;
+      background: #ffffff;
+    }
+    #menu ul {
+      padding: 0;
+    }
+    #menu li {
+      list-style: none;
+      display: initial;
+    }
+    #menu a {
+      color: #000000;
+      display: block;
+      font-size: 20px;
+      margin-bottom: 58px;
+      text-decoration: none;
+    }
+  }
 </style>
