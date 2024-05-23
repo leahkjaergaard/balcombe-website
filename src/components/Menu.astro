@@ -1,3 +1,7 @@
+---
+import Styles from "../Style/styles.css";
+---
+
 <script>
   const onLoad = () => {
     const burgerMenu = document.querySelector("#burger-menu");
@@ -21,20 +25,20 @@
       <span></span>
     </button>
 
-    <a href="Index.astro"><p>BALCOmBE</p></a>
+    <a href="index"><p>BALCOmBE</p></a>
 
     <div class="ikoner">
       <button class="search">SEARCH</button>
-      <a href="Login.astro"><img src="/login.svg" alt="" /></a>
-      <a href="Saved.astro"><img src="/hjerte.svg" alt="" /></a>
-      <a href="Cart.astro"><img src="/cart.svg" alt="" /></a>
+      <a href="login"><img src="/login.svg" alt="" /></a>
+      <a href="saved"><img src="/hjerte.svg" alt="" /></a>
+      <a href="cart"><img src="/cart.svg" alt="" /></a>
     </div>
 
     <nav id="menu">
       <ul>
         <li><button class="search2">SEARCH</button></li>
-        <li><a href="allitems.astro">SHOP</a></li>
-        <li><a href="About.astro">ABOUT</a></li>
+        <li><a href="allitems">SHOP</a></li>
+        <li><a href="about">ABOUT</a></li>
       </ul>
     </nav>
   </div>
@@ -56,7 +60,7 @@
   }
 
   button:hover {
-    color: #ab1f27;
+    color: var(--red);
   }
   header {
   }
@@ -65,7 +69,7 @@
     color: #000000;
   }
   a:hover {
-    color: #ab1f27;
+    color: var(--red);
   }
 
   img:hover {

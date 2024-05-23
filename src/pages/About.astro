@@ -1,62 +1,62 @@
 ---
-import Menu from "../pages/Menu.astro"; 
+import MainLayout from "../layouts/MainLayout.astro";
+import Banner from "../components/Banner.astro";
 ---
-<section>
-<h1>ABOUT</h1>
 
+<MainLayout>
+  <Banner title="ABOUT" />
 
-<img src="public/billeder/sarah_about.webp" alt="#">
+  <section>
+    <img src="public/billeder/sarah_about.webp" alt="#" />
 
-<h2>ABOUT THE BALCOMBE UNIVERSE</h2>
+    <h2>ABOUT THE BALCOMBE UNIVERSE</h2>
 
-<p>Cool and passionate individuals, enabling them to express themselves freely. Founded by Sarah Paaschburg and Christiane Hagger, we blend Sarah's expertise in photography and styling with Christiane's ability to interpret trends and production knowledge. Together, we aim to introduce a new language to the fashion scene, merging dreams with a dark, sexy, sporty, and casual aesthetic.</p>
+    <p>Cool and passionate individuals, enabling them to express themselves freely. Founded by Sarah Paaschburg and Christiane Hagger, we blend Sarah's expertise in photography and styling with Christiane's ability to interpret trends and production knowledge. Together, we aim to introduce a new language to the fashion scene, merging dreams with a dark, sexy, sporty, and casual aesthetic.</p>
 
-<p>Our vision is to create clothing that combines comfort and style, empowering young adults to express their unique identities confidently. We strive to be the go-to brand for young adults seeking fashion that embodies both comfort and allure, promoting diversity, inclusivity, and self-expression.</p>
+    <p>Our vision is to create clothing that combines comfort and style, empowering young adults to express their unique identities confidently. We strive to be the go-to brand for young adults seeking fashion that embodies both comfort and allure, promoting diversity, inclusivity, and self-expression.</p>
 
-<p>We prioritize designs that are both cozy and trendy, welcoming people of all backgrounds, sizes, and identities. We are committed to sustainable practices, producing long-lasting, timeless pieces to minimize our impact on the planet. We believe in empowering our customers to feel confident and sexy, fostering a positive self-image and self-expression. Our aim is to build a supportive and inspiring community around our brand, where people can connect, share, and inspire each other.
-</p>
+    <p>We prioritize designs that are both cozy and trendy, welcoming people of all backgrounds, sizes, and identities. We are committed to sustainable practices, producing long-lasting, timeless pieces to minimize our impact on the planet. We believe in empowering our customers to feel confident and sexy, fostering a positive self-image and self-expression. Our aim is to build a supportive and inspiring community around our brand, where people can connect, share, and inspire each other.</p>
 
-<img src="#" alt="#">
-<img src="#" alt="#">
-<img src="#" alt="#">
-<img src="#" alt="#">
-<img src="#" alt="#">
+    <img src="#" alt="#" />
+    <img src="#" alt="#" />
+    <img src="#" alt="#" />
+    <img src="#" alt="#" />
+    <img src="#" alt="#" />
 
-<p>We help our customers to be you, and find yourself and your dreams through every day wear, to follow your dreams to stand by yourself by show who you are - we are supporting dreamers</p>
+    <p>We help our customers to be you, and find yourself and your dreams through every day wear, to follow your dreams to stand by yourself by show who you are - we are supporting dreamers</p>
 
-<p>FIND US AT: Ole Suhrs Gade 18</p>
-<p>CONTACT: Sarah.paaschburg@gmail.com</p>
+    <p>FIND US AT: Ole Suhrs Gade 18</p>
+    <p>CONTACT: Sarah.paaschburg@gmail.com</p>
+  </section>
+  <MainLayout />
 
+  <style>
+    /* MOBIL */
+    @media only screen and (max-width: 800px) {
+      html {
+        background-color: #ab1f27;
+      }
 
-</section>
-
-<style>
-    
-/* MOBIL */
-@media only screen and (max-width: 800px) {    
-html {
-background-color: #ab1f27;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-h1 {
-font-size: 24px;
-color: #FFFFFF;
-text-align: center;
-}
-h2 {
-text-align: center;
-font-size: 20px;
-color: #FFFFFF;
-}
-}
-p {
-font-size: 15px;
-color: #FFFFFF;
-line-height: 20px;
-}
-</style>
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      h1 {
+        font-size: 24px;
+        color: #ffffff;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        font-size: 20px;
+        color: #ffffff;
+      }
+    }
+    p {
+      font-size: 15px;
+      color: #ffffff;
+      line-height: 20px;
+    }
+  </style>
+</MainLayout>
