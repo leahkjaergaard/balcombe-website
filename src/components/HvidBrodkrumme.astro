@@ -1,0 +1,43 @@
+<div>
+  <ul class="brodkrumme">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">ABOUT</a></li>
+  </ul>
+</div>
+
+<style>
+  ul.brodkrumme {
+    padding: 10px 25px;
+    list-style: none;
+  }
+
+  ul.brodkrumme li {
+    display: inline;
+    font-size: 15px;
+  }
+
+  ul.brodkrumme li + li:before {
+    padding: 2px;
+    color: #ffffff;
+    content: "/\00a0"; /* fundet på nettet*/
+  }
+
+  ul.brodkrumme li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Avenir Next;
+    font-size: 10px;
+  }
+
+  @media screen and (min-width: 1250px) {
+    
+    ul.brodkrumme li a {
+      font-size: 20px;
+
+    }
+    ul.brodkrumme li {
+      display: inline;
+      font-size: 20px;
+     
+    }
+</style>

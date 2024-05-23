@@ -1,0 +1,73 @@
+<img src="public/billeder/33.webp" alt="" />
+
+<div class="grid">
+  <div class="add_to_cart_mobil">
+    <p>title</p>
+    <p>pris</p>
+    <button>ADD TO CART</button>
+  </div>
+  <div class="add_to_cart_mobil1">
+    <p>title</p>
+    <p>pris</p>
+    <button>ADD TO CART</button>
+  </div>
+</div>
+
+<!-- <a href={`/singleview/${data.slug}`}>
+  <article class="card">
+    <p>{data.name}</p>
+    <p>{data.price}</p>
+    <img src={data.img} alt="ss" />
+  </article>
+</a> -->
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .add_to_cart_mobil {
+    background-color: #d9d9d980;
+    margin-top: -120px;
+    padding: 5px;
+  }
+  .add_to_cart_mobil p {
+    font-family: Avenir Next;
+    text-transform: uppercase;
+    opacity: 100%;
+  }
+  .add_to_cart_mobil1 {
+    background-color: #d9d9d980;
+    margin-top: -120px;
+
+    padding: 5px;
+  }
+  .add_to_cart_mobil1 p {
+    font-family: Avenir Next;
+    text-transform: uppercase;
+    opacity: 100%;
+  }
+
+  img {
+    width: 50%;
+    border-color: #ab1f27;
+    /* border: solid #ab1f27; */
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  button {
+    font-family: Avenir Next;
+    font-size: 15px;
+    border-radius: 0;
+    border-color: #ab1f27;
+    background-color: #ab1f27;
+    padding: 5px;
+    color: #ffffff;
+    border: none;
+  }
+</style>

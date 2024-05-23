@@ -8,7 +8,7 @@
     <li><a href="allitems">ALL ITEMS (12)</a></li>
     <li><a href="tops">TOPS (2)</a></li>
     <li><a href="pants">PANTS (4)</a></li>
-    <br />
+
     <li><a href="accessories">ACCESSORIES (2)</a></li>
     <li><a href="hoodies">HOODIES/SWEATSHIRTS (4)</a></li>
   </ul>
@@ -20,9 +20,11 @@
     width: 100%;
   }
   ul.kategorier {
-    padding: 10px 25px;
     list-style: none;
-    justify-content: end;
+    position: absolute;
+    right: 30px;
+    margin-left: 30%;
+    margin-top: 26px;
   }
   ul.kategorier li {
     display: inline;
@@ -63,5 +65,23 @@
     text-decoration: none;
     font-family: Avenir Next;
     font-size: 10px;
+  }
+
+  @media screen and (min-width: 1250px) {
+    ul.kategorier li a {
+      font-size: 20px;
+    }
+    ul.brodkrumme li a {
+      font-size: 20px;
+    }
+
+    ul.kategorier li {
+      display: inline;
+      font-size: 20px;
+    }
+    ul.brodkrumme li {
+      display: inline;
+      font-size: 20px;
+    }
   }
 </style>
