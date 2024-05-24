@@ -1,0 +1,108 @@
+<div class="tekst_billede">
+  <h1>BALCOMmBE</h1>
+  <h2>SUPPORTING DREAMERS</h2>
+</div>
+<div class="mobil_billede"><img src="public/billeder/mat.png" alt="" /></div>
+<div class="desktop">
+  <img src="public/billeder/forside1billede1.webp" alt="" />
+  <img src="public/billeder/forside1billede2.webp" alt="" />
+</div>
+
+<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.5 32.2474L3 17.6237M3 17.6237L17.5 3M3 17.6237H32" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.5 32.2474L32 17.6237M32 17.6237L17.5 3M32 17.6237H3" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div class="knap"><a href="allitems"><button>SHOP NOW</button></a></div>
+
+<style>
+  .desktop {
+    display: none;
+  }
+  h2 {
+    display: none;
+  }
+  h1 {
+    display: none;
+  }
+  .mobil_billede img {
+    width: 100%;
+    z-index: 1;
+  }
+
+  svg {
+    position: absolute;
+  }
+
+  .knap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-top: -100px; /* HJÆÆÆÆÆLP, knappen skal "sidde fast, så man stadig kan se den når man hiver ud i siden*/
+  }
+
+  button {
+    padding: 5px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: Avenir Next;
+    border: none;
+    background-color: #ab1f27;
+    width: 175px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .knap {
+      position: absolute;
+      left: 80%;
+      transform: translate(-50%);
+      z-index: 2;
+      margin-top: -20%;
+    }
+
+    button {
+      padding: 5px;
+      font-size: 1.75vw;
+      width: 20.4vw;
+    }
+    .tekst_billede {
+      margin-left: 40px;
+    }
+    .desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .desktop img {
+      width: 100%;
+    }
+
+    h2 {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      font-family: Avenir Next;
+      color: #ab1f27;
+      font-weight: 400;
+      font-size: 1.75vw;
+      margin-top: 10%; /* kig */
+    }
+    h1 {
+      position: absolute;
+      display: block;
+      color: #ab1f27;
+      font-family: Neon Vampire;
+      font-size: 9.896vw;
+      margin-top: 10px;
+    }
+
+    .mobil_billede img {
+      display: none;
+    }
+  }
+</style>
