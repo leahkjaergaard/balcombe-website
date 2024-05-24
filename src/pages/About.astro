@@ -1,62 +1,145 @@
 ---
-import Menu from "../components/Menu.astro"; 
+import Menu from "../pages/Menu.astro"; 
 ---
+
+<HvidMenu />
+<BannerHvid title="ABOUT" />
+<HvidBrodkrumme />
+
 <section>
-<h1>ABOUT</h1>
+  <div class="sarah"><img src="public/billeder/sarah_about.webp" alt="#" /></div>
+  <h2>ABOUT THE BALCOMBE UNIVERSE</h2>
 
+  <div class="copy">
+    <p>Cool and passionate individuals, enabling them to express themselves freely. Founded by Sarah Paaschburg and Christiane Hagger, we blend Sarah's expertise in photography and styling with Christiane's ability to interpret trends and production knowledge. Together, we aim to introduce a new language to the fashion scene, merging dreams with a dark, sexy, sporty, and casual aesthetic.</p>
 
-<img src="public/billeder/sarah_about.webp" alt="#">
+    <p>Our vision is to create clothing that combines comfort and style, empowering young adults to express their unique identities confidently. We strive to be the go-to brand for young adults seeking fashion that embodies both comfort and allure, promoting diversity, inclusivity, and self-expression.</p>
 
-<h2>ABOUT THE BALCOMBE UNIVERSE</h2>
+    <p>We prioritize designs that are both cozy and trendy, welcoming people of all backgrounds, sizes, and identities. We are committed to sustainable practices, producing long-lasting, timeless pieces to minimize our impact on the planet. We believe in empowering our customers to feel confident and sexy, fostering a positive self-image and self-expression. Our aim is to build a supportive and inspiring community around our brand, where people can connect, share, and inspire each other.</p>
+  </div>
 
-<p>Cool and passionate individuals, enabling them to express themselves freely. Founded by Sarah Paaschburg and Christiane Hagger, we blend Sarah's expertise in photography and styling with Christiane's ability to interpret trends and production knowledge. Together, we aim to introduce a new language to the fashion scene, merging dreams with a dark, sexy, sporty, and casual aesthetic.</p>
+  <section class="collage">
+    <div class="sarah1"><img src="public/billeder/sarah1.webp" alt="#" /></div>
+    <p class="citat">"We help our customers to be you, and find yourself and your dreams through every day wear, to follow your dreams to stand by yourself by show who you are - we are supporting dreamers"</p>
 
-<p>Our vision is to create clothing that combines comfort and style, empowering young adults to express their unique identities confidently. We strive to be the go-to brand for young adults seeking fashion that embodies both comfort and allure, promoting diversity, inclusivity, and self-expression.</p>
+    <div class="bojler"><img src="public/billeder/bojler.webp" alt="#" /></div>
+    <div class="sarah2"><img src="public/billeder/sarah2.webp" alt="#" /></div>
+    <div class="toj"><img src="public/billeder/toj.webp" alt="#" /></div>
+    <div class="sy"><img src="public/billeder/sy.webp" alt="#" /></div>
+  </section>
 
-<p>We prioritize designs that are both cozy and trendy, welcoming people of all backgrounds, sizes, and identities. We are committed to sustainable practices, producing long-lasting, timeless pieces to minimize our impact on the planet. We believe in empowering our customers to feel confident and sexy, fostering a positive self-image and self-expression. Our aim is to build a supportive and inspiring community around our brand, where people can connect, share, and inspire each other.
-</p>
-
-<img src="#" alt="#">
-<img src="#" alt="#">
-<img src="#" alt="#">
-<img src="#" alt="#">
-<img src="#" alt="#">
-
-<p>We help our customers to be you, and find yourself and your dreams through every day wear, to follow your dreams to stand by yourself by show who you are - we are supporting dreamers</p>
-
-<p>FIND US AT: Ole Suhrs Gade 18</p>
-<p>CONTACT: Sarah.paaschburg@gmail.com</p>
-
-
+  <p class="citat2">"We help our customers to be you, and find yourself and your dreams through every day wear, to follow your dreams to stand by yourself by show who you are - we are supporting dreamers"</p>
+  <div class="findus">
+    <p>FIND US AT: Ole Suhrs Gade 18, <br />1354 Copenhagen K</p>
+    <p>CONTACT: Sarah.paaschburg@gmail.com</p>
+  </div>
 </section>
 
-<style>
-    
-/* MOBIL */
-@media only screen and (max-width: 800px) {    
-html {
-background-color: #ab1f27;
-}
+<HvidFooter />
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-h1 {
-font-size: 24px;
-color: #FFFFFF;
-text-align: center;
-}
-h2 {
-text-align: center;
-font-size: 20px;
-color: #FFFFFF;
-}
-}
-p {
-font-size: 15px;
-color: #FFFFFF;
-line-height: 20px;
-}
+<style>
+  .citat2 {
+    display: none;
+  }
+  .bojler,
+  .sy,
+  .sarah2 {
+    display: none;
+  }
+
+  .toj {
+    margin-bottom: 40px;
+  }
+  .collage {
+    display: grid;
+    grid-template-collums: repeat(2, 1fr);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .copy {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .findus {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 40px;
+    border: solid #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .citat {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 80%;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sarah {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  h2 {
+    font-family: Avenir Next;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  p {
+    font-family: Avenir Next;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+  html {
+    background-color: #ab1f27;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  h1 {
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 800px) {
+    .copy {
+      width: 75ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      font-size: 35px;
+    }
+
+    .sarah {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 20px;
+    }
+
+    .citat {
+      width: 80%;
+    }
+  }
 </style>

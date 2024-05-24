@@ -32,12 +32,15 @@
   .stortgrid {
     line-height: 1.5;
   }
+  .mobil p {
+    color: #ffffff;
+  }
   hr {
-    color: #000000;
+    color: white;
   }
   a {
     text-decoration: none;
-    color: black;
+    color: #ffffff;
   }
   .desktop {
     display: none;
@@ -45,6 +48,7 @@
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    color: #ffffff;
   }
   p {
     font-family: Avenir Next;
@@ -62,14 +66,10 @@
   #subscribe {
     background-color: #ab1727;
     font-family: Avenir Next;
-    border: none;
+
     padding: 11.5px;
     font-size: 12px;
     color: white;
-  }
-
-  #subscribe :hover {
-    color: black;
   }
 
   ul {
@@ -80,6 +80,9 @@
   }
 
   @media screen and (min-width: 800px) {
+    #subscribe :hover {
+      color: black;
+    }
     a:hover {
       color: #ab1727;
     }

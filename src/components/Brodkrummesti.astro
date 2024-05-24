@@ -1,0 +1,87 @@
+<div>
+  <ul class="brodkrumme">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">SHOP</a></li>
+  </ul>
+
+  <ul class="kategorier">
+    <li><a href="allitems">ALL ITEMS (12)</a></li>
+    <li><a href="tops">TOPS (2)</a></li>
+    <li><a href="pants">PANTS (4)</a></li>
+
+    <li><a href="accessories">ACCESSORIES (2)</a></li>
+    <li><a href="hoodies">HOODIES/SWEATSHIRTS (4)</a></li>
+  </ul>
+</div>
+
+<style>
+  div {
+    display: flex;
+    width: 100%;
+  }
+  ul.kategorier {
+    list-style: none;
+    position: absolute;
+    right: 30px;
+    margin-left: 30%;
+    margin-top: 26px;
+  }
+  ul.kategorier li {
+    display: inline;
+    font-size: 15px;
+  }
+
+  ul.kategorier li + li:before {
+    padding: 2px;
+    color: #ab1f27;
+    content: "/\00a0"; /* fundet på nettet*/
+  }
+
+  ul.kategorier li a {
+    color: #ab1f27;
+    text-decoration: none;
+    font-family: Avenir Next;
+    font-size: 10px;
+  }
+
+  ul.brodkrumme {
+    padding: 10px 25px;
+    list-style: none;
+  }
+
+  ul.brodkrumme li {
+    display: inline;
+    font-size: 15px;
+  }
+
+  ul.brodkrumme li + li:before {
+    padding: 2px;
+    color: #ab1f27;
+    content: "/\00a0"; /* fundet på nettet*/
+  }
+
+  ul.brodkrumme li a {
+    color: #ab1f27;
+    text-decoration: none;
+    font-family: Avenir Next;
+    font-size: 10px;
+  }
+
+  @media screen and (min-width: 1250px) {
+    ul.kategorier li a {
+      font-size: 20px;
+    }
+    ul.brodkrumme li a {
+      font-size: 20px;
+    }
+
+    ul.kategorier li {
+      display: inline;
+      font-size: 20px;
+    }
+    ul.brodkrumme li {
+      display: inline;
+      font-size: 20px;
+    }
+  }
+</style>
