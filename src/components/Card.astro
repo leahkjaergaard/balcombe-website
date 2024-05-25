@@ -8,29 +8,31 @@ import MainLayout from "../layouts/MainLayout.astro";
   <a href={`/products/${data.slug}`}>
     <img class="image" src={data.image_front} alt={data.alttext} />
   </a>
-  <div class="item-info">
-    <a href={`/products/${data.slug}`}>
-      <!-- brand_front = navn på produkt i listeview ''overskrift''' -->
-      <h3 class="h3">{data.name}</h3>
-    </a>
-    <!-- price = pris på produkt -->
-    <h4 class="h4">{data.price}</h4>
-    {data.soldout && <h4 class="soldout">{data.soldout.toLowerCase() === "soldout" ? "Sold Out" : data.soldout}</h4>}
-    <!-- // linket til produktet med en dynamisk slug. Viser "SHOP" hvis prisen ikke er markeret som "soldout". -->
-    {
-      // data.price && data.price.toLowerCase() !== "soldout" && (
-      //   // knap der linker til det gældende produkt
-      //   <button type="button" name="btn">
-      //     <a class="knap" href={`/products/${data.slug}`}>
-      //       <p>SHOP</p>
-      //     </a>
-      //   </button>
-      // )
-    }
-  </div>
+  <!-- <div class="item-info">
+    <a href={`/products/${data.slug}`}> -->
+  <!-- brand_front = navn på produkt i listeview ''overskrift''' -->
+  <!-- <h3 class="h3">{data.name}</h3>
+    </a> -->
+  <!-- price = pris på produkt -->
+  <!-- <h4 class="h4">{data.price}</h4>
+    {data.soldout && <h4 class="soldout">{data.soldout.toLowerCase() === "soldout" ? "Sold Out" : data.soldout}</h4>} -->
+  <!-- // linket til produktet med en dynamisk slug. Viser "SHOP" hvis prisen ikke er markeret som "soldout". -->
+  {
+    // data.price && data.price.toLowerCase() !== "soldout" && (
+    //   // knap der linker til det gældende produkt
+    //   <button type="button" name="btn">
+    //     <a class="knap" href={`/products/${data.slug}`}>
+    //       <p>SHOP</p>
+    //     </a>
+    //   </button>
+    // )
+  }
 </article>
 
 <style>
+  article {
+    outline-color: #ab1f27;
+  }
   /* knap */
   button {
     color: #7a1c44;
@@ -80,14 +82,13 @@ import MainLayout from "../layouts/MainLayout.astro";
   .grid-item {
     text-align: center;
     padding: 10px;
-    background-color: var(--background-color);
+    outline: 5px solid #ab1f27;
   }
 
   /* styling for billeder */
   .image {
     width: 100%;
-    height: auto;
-    scale: 100%;
+    height: 100%;
   }
   .knap:hover {
     text-decoration: none;
@@ -100,8 +101,6 @@ import MainLayout from "../layouts/MainLayout.astro";
   @media screen and (min-width: 767px) {
     /* billedestørrelse stor skærm */
     .image {
-      height: 80%;
-      width: 80%;
       object-fit: cover;
     }
 
