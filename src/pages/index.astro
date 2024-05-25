@@ -1,10 +1,25 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Footer from "../components/Footer.astro";
+import Forside1 from "../components/Forside1.astro";
 import Forside2 from "../components/Forside2.astro";
+import Forside3 from "../components/Forside3.astro";
 ---
 
 <MainLayout title="Front page">
-  <Forside2 />
+  <div class="slideshow">
+    <div class="slide"><Forside1 /></div>
+    <div class="slide"><Forside2 /></div>
+    <div class="slide"><Forside3 /></div>
+     <a class="naeste" onclick="plusSlides(-1)"></a>
+  <a class="tilbage" onclick="plusSlides(1)"></a>
+  </div>
   <Footer />
 </MainLayout>
+
+
+
+
+
+
+
