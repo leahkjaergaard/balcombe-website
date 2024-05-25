@@ -1,73 +1,113 @@
-<img src="public/billeder/33.webp" alt="" />
+---
+const { data } = Astro.props;
+import MainLayout from "../layouts/MainLayout.astro";
+---
 
-<div class="grid">
-  <div class="add_to_cart_mobil">
-    <p>title</p>
-    <p>pris</p>
-    <button>ADD TO CART</button>
+<article class={`grid-item ${data.category}`} data-category={data.category}>
+  <!-- Billede fra databasen + alttext -->
+  <a href={`/products/${data.slug}`}>
+    <img class="image" src={data.image_front} alt={data.alttext} />
+  </a>
+  <div class="item-info">
+    <a href={`/products/${data.slug}`}>
+      <!-- brand_front = navn på produkt i listeview ''overskrift''' -->
+      <h3 class="h3">{data.name}</h3>
+    </a>
+    <!-- price = pris på produkt -->
+    <h4 class="h4">{data.price}</h4>
+    {data.soldout && <h4 class="soldout">{data.soldout.toLowerCase() === "soldout" ? "Sold Out" : data.soldout}</h4>}
+    <!-- // linket til produktet med en dynamisk slug. Viser "SHOP" hvis prisen ikke er markeret som "soldout". -->
+    {
+      // data.price && data.price.toLowerCase() !== "soldout" && (
+      //   // knap der linker til det gældende produkt
+      //   <button type="button" name="btn">
+      //     <a class="knap" href={`/products/${data.slug}`}>
+      //       <p>SHOP</p>
+      //     </a>
+      //   </button>
+      // )
+    }
   </div>
-  <div class="add_to_cart_mobil1">
-    <p>title</p>
-    <p>pris</p>
-    <button>ADD TO CART</button>
-  </div>
-</div>
-
-<!-- <a href={`/singleview/${data.slug}`}>
-  <article class="card">
-    <p>{data.name}</p>
-    <p>{data.price}</p>
-    <img src={data.img} alt="ss" />
-  </article>
-</a> -->
+</article>
 
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .add_to_cart_mobil {
-    background-color: #d9d9d980;
-    margin-top: -120px;
-    padding: 5px;
-  }
-  .add_to_cart_mobil p {
-    font-family: Avenir Next;
-    text-transform: uppercase;
-    opacity: 100%;
-  }
-  .add_to_cart_mobil1 {
-    background-color: #d9d9d980;
-    margin-top: -120px;
-
-    padding: 5px;
-  }
-  .add_to_cart_mobil1 p {
-    font-family: Avenir Next;
-    text-transform: uppercase;
-    opacity: 100%;
-  }
-
-  img {
-    width: 50%;
-    border-color: #ab1f27;
-    /* border: solid #ab1f27; */
-  }
-
-  p {
-    font-size: 10px;
-  }
-
+  /* knap */
   button {
-    font-family: Avenir Next;
-    font-size: 15px;
-    border-radius: 0;
-    border-color: #ab1f27;
-    background-color: #ab1f27;
-    padding: 5px;
-    color: #ffffff;
+    color: #7a1c44;
+    font-size: 16px;
     border: none;
+    padding: 2px 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid #7a1c44;
+  }
+  button p {
+    font-family: var(--font-family-roman);
+    color: var(--cta-text);
+  }
+  button:hover {
+    background-color: #7a1c44;
+    color: white;
+  }
+  button:hover p {
+    color: white;
+  }
+  /* id til javascript */
+  .hide {
+    display: none;
+  }
+  /* tekst - brand, pris  */
+  .item-info {
+    padding: 10px;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  /* stil for prisen */
+  .h4 {
+    font-family: var(--font-family-roman);
+    font-weight: 100 !important;
+  }
+  /* stil for mærket */
+  .h3 {
+    font-family: var(--font-family-roman);
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 100px;
+  }
+  .grid-item {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--background-color);
+  }
+
+  /* styling for billeder */
+  .image {
+    width: 100%;
+    height: auto;
+    scale: 100%;
+  }
+  .knap:hover {
+    text-decoration: none;
+  }
+  /* styling på soldout - den ligger med en <p> rundt om som er span stylet i koden ^ */
+  .soldout {
+    color: var(--cta-text);
+    font-family: var(--font-family-medium);
+  }
+  @media screen and (min-width: 767px) {
+    /* billedestørrelse stor skærm */
+    .image {
+      height: 80%;
+      width: 80%;
+      object-fit: cover;
+    }
+
+    /* produktinformation i desktop */
+    .item-info {
+      margin-top: 20px;
+    }
   }
 </style>
