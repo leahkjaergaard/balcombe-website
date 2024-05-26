@@ -2,7 +2,7 @@
 <div class="stortgrid">
   <div class="mobil">
     <p>NEWS ON DROPS, EVENTS AND STUFF! SIGN UP FOR OUR E-MAIL AND BE THE FIRST TO KNOW OUR SPECIAL OFFERS!</p>
-    <input type="text" id="email" name="email" value="ENTER E-MAIL" />
+    <input type="text" id="email" name="email" value="ENTER E-MAIL" aria-label="enter mail" />
     <input type="submit" id="subscribe" value="SUBSCRIBE" />
   </div>
 
@@ -15,29 +15,33 @@
       <li>COOKIES</li>
     </ul>
     <ul class="some">
-      <a href="https://www.instagram.com/balcombe_life/"><li>INSTAGRAM</li></a>
-      <a href="https://www.tiktok.com/@balcombe.life"><li>TIKTOK</li></a>
-      <a href="https://www.facebook.com/balcombelife"><li>FACEBOOK</li></a>
+      <li><a href="https://www.instagram.com/balcombe_life/">INSTAGRAM</a></li>
+      <li><a href="https://www.tiktok.com/@balcombe.life">TIKTOK</a></li>
+      <li><a href="https://www.facebook.com/balcombelife">FACEBOOK</a></li>
     </ul>
   </div>
   <div class="desktop">
     <p>NEWS ON DROPS, EVENTS AND STUFF! SIGN UP FOR OUR E-MAIL AND BE THE FIRST TO KNOW OUR SPECIAL OFFERS!</p>
     <div>
-      <input type="text" id="email" name="email" value="ENTER E-MAIL" />
-      <input type="submit" id="subscribe" value="SUBSCRIBE" />
+      <input type="text" id="email2" name="email" value="ENTER E-MAIL" aria-label="enter mail" />
+      <input type="submit" id="subscribe2" value="SUBSCRIBE" />
     </div>
   </div>
 </div>
+
 <style>
   .stortgrid {
     line-height: 1.5;
   }
-  hr {
+  .mobil p {
     color: #000000;
+  }
+  hr {
+    color: white;
   }
   a {
     text-decoration: none;
-    color: black;
+    color: #000000;
   }
   .desktop {
     display: none;
@@ -45,6 +49,7 @@
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    color: #000000;
   }
   p {
     font-family: Avenir Next;
@@ -62,14 +67,10 @@
   #subscribe {
     background-color: #ab1727;
     font-family: Avenir Next;
-    border: none;
+
     padding: 11.5px;
     font-size: 12px;
     color: white;
-  }
-
-  #subscribe :hover {
-    color: black;
   }
 
   ul {
@@ -79,16 +80,29 @@
     font-family: Avenir Next;
   }
 
+  p {
+    color: #ffffff;
+  }
+
   @media screen and (min-width: 800px) {
+    #subscribe :hover {
+      color: black;
+    }
     a:hover {
       color: #ab1727;
     }
-    #email {
+    #email2 {
       width: 45%;
+      padding: 10px;
     }
 
-    #subscribe {
-      padding: 12px;
+    #subscribe2 {
+      padding: 10px;
+      font-family: Avenir Next;
+      border-radius: 0%;
+      background-color: #ab1727;
+      color: #ffffff;
+      border: none;
     }
     li {
       width: 25ch;
@@ -113,6 +127,9 @@
       display: grid;
       grid-column: 4 / span 3;
       margin-left: 50px;
+    }
+    p {
+      color: #000000;
     }
   }
 

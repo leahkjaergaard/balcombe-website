@@ -1,0 +1,135 @@
+<h1>BALCOMmBE</h1>
+
+<div class="mobil_billede"><img src="public/billeder/forside2mobil.webp" alt="" /></div>
+
+<div class="desktop">
+  <div class="billedeogknap">
+    <div class="mellembillede"><img src="public/billeder/forside2billedemellem.webp" alt="" /></div>
+    <div class="knap"><a href="https://www.instagram.com/balcombe_life/"><button>FOLLOW ON INSTAGRAM</button></a></div>
+    <div class="knap2"><a href="https://www.instagram.com/balcombe_life/"><button>FOLLOW ON INSTAGRAM</button></a></div>
+    <div class="smaabilleder">
+      <img src="public/billeder/lille1.webp" alt="" />
+      <img src="public/billeder/lille2.webp" alt="" />
+      <img src="public/billeder/lille3.webp" alt="" />
+      <img src="public/billeder/lille4.webp" alt="" />
+      <img src="public/billeder/lille5.webp" alt="" />
+    </div>
+  </div>
+  <div class="stortbillede"><img src="public/billeder/test.webp" alt="" /></div>
+</div>
+
+<style>
+  .smaabilleder {
+    display: none;
+  }
+
+  .mellembillede {
+    display: none;
+  }
+
+  .stortbillede {
+    display: none;
+  }
+
+  .knap2 {
+    display: none;
+  }
+  h1 {
+    display: none;
+  }
+  .mobil_billede img {
+    width: 100%;
+    z-index: 1;
+  }
+
+  svg {
+    position: absolute;
+  }
+
+  .knap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-top: -100px; /* HJÆÆÆÆÆLP, knappen skal "sidde fast, så man stadig kan se den når man hiver ud i siden*/
+  }
+
+  button {
+    padding: 5px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: Avenir Next;
+    border: none;
+    background-color: #ab1f27;
+    width: 257px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .smaabilleder {
+      width: 98.5%;
+      height: 100%;
+      margin-top: 9.7%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-right: 10px;
+    }
+    .mellembillede {
+      display: block;
+      width: 52.4%;
+      margin-top: 22%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .stortbillede {
+      display: grid;
+      grid-column: 2 / span 1;
+    }
+    .desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .desktop img {
+      width: 100%;
+    }
+
+    .knap {
+      display: none;
+    }
+
+    .knap2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 10.5%;
+      margin-top: 0.5%;
+    }
+
+    .billedeogknap {
+    }
+
+    button {
+      padding: 5px;
+      font-size: 1.75vw;
+      width: 29.6vw;
+    }
+    .mobil_billede img {
+      display: none;
+    }
+
+    h1 {
+      position: absolute;
+      display: block;
+      color: #ab1f27;
+      font-family: Neon Vampire;
+      font-size: 9.896vw;
+      margin-top: 10px;
+      margin-left: 40px;
+    }
+  }
+</style>

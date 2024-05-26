@@ -1,6 +1,98 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
+import Forside1 from "../components/Forside1.astro";
+import Forside2 from "../components/Forside2.astro";
+import Forside3 from "../components/Forside3.astro";
 ---
 
-<MainLayout />
+<MainLayout title="Front page">
+  <div class="slideshow">
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <div class="slide"><Forside1 /></div>
+    <div class="slide"><Forside2 /></div>
+    <div class="slide"><Forside3 /></div>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
+  <Footer />
+</MainLayout>
+
+<style>
+  /* styles.css */
+
+  .slidehow {
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    z-index: 1;
+    user-select: none;
+  }
+
+  button.prev {
+    left: 5%;
+  }
+
+  button.next {
+    right: 5%;
+  }
+
+  button:hover {
+    color: #ab1f27;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Start with the first slide
+    showSlide(currentSlide);
+
+    // Assign functions to global scope for button click handlers
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  });
+</script>
