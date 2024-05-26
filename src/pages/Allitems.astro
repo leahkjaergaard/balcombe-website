@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 import Card from "../components/Card.astro";
 import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
 
 const data = await fetch("https://ylexooenrhrqjqzuypjf.supabase.co/rest/v1/balcombe_productlist", {
   method: "GET",
@@ -16,7 +17,7 @@ console.log(data);
 
 <!-- // Layout og indhold -->
 <MainLayout title="SHOP">
-  <Banner title="Den her skal ændres" />
+  <Banner title="ændres" />
   <!-- Filtrering af produkter -->
   <div class="filter">
     <a class="filterbutton active" data-category="all">ALL ITEMS (12)</a>
@@ -33,7 +34,11 @@ console.log(data);
   <!-- Card-komponent for hvert produkt -->
   <section class="grid-container" id="articles-container">
     {data.map((item) => <Card data={item} key={item.id} />)}
+
+    <!-- <div class="stortbillede"><img src="public/billeder/test2.png" alt="" /></div> -->
   </section>
+
+  <p>NO MORE PRODUCTS</p>
 
   <!-- JavaScript til filtrering -->
   <script>
@@ -65,96 +70,111 @@ console.log(data);
       });
     }
   </script>
+</MainLayout>
+<Footer />
 
-  <style>
-    h1 {
-      font-family: Avenir Next;
-      font-weight: 500;
-      font-size: 24px;
-      text-align: center;
-      color: #ab1f27;
-    }
-    /* Styling for den valgte filtreringsknap */
-    .filterbutton.active {
-      color: var(--cta-text);
-      border-bottom: 1px solid var(--cta-text);
-    }
+<style>
+  p {
+    font-family: Avenir Next;
+    font-size: 12px;
+    color: #ab1f27;
+    text-align: center;
+    margin-top: -70px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: Avenir Next;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #ab1f27;
+  }
+  /* Styling for den valgte filtreringsknap */
+  .filterbutton.active {
+    color: var(--cta-text);
+    border-bottom: 1px solid var(--cta-text);
+  }
 
-    /* id til javascript */
-    .hide {
-      display: none;
-    }
+  /* id til javascript */
+  .hide {
+    display: none;
+  }
 
-    .filter {
-      list-style: none;
-      position: absolute;
-      right: 30px;
-      margin-left: 30%;
-      font-size: 15px;
-      padding: 2px;
-      color: #ab1f27;
-      text-decoration: none;
-      font-family: Avenir Next;
-      font-size: 10px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      overflow: hidden;
-      justify-content: center;
-      cursor: pointer;
-    }
+  .filter {
+    list-style: none;
+    position: absolute;
+    right: 30px;
+    margin-left: 30%;
+    font-size: 15px;
+    padding: 2px;
+    color: #ab1f27;
+    text-decoration: none;
+    font-family: Avenir Next;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-    /* filter mobil */
-    .filter {
-    }
+  /* filter mobil */
+  .filter {
+  }
 
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 100px;
+    gap: 5px;
+  }
+  .grid-item {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--background-color);
+  }
+
+  .image_front {
+    width: 100%;
+    height: auto;
+    scale: 100%;
+  }
+
+  .filterbutton:hover {
+    cursor: pointer;
+  }
+
+  .filterbutton {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    overflow: hidden;
+    letter-spacing: 1.5px;
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 800px) {
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(4, 1fr);
       padding-bottom: 100px;
-    }
-    .grid-item {
-      text-align: center;
-      padding: 10px;
-      background-color: var(--background-color);
-    }
+      gap: 5px;
+      margin-top: 50px;
 
-    .image_front {
-      width: 100%;
-      height: auto;
-      scale: 100%;
-    }
-
-    .filterbutton:hover {
-      cursor: pointer;
+      padding-top: 25px;
     }
 
     .filterbutton {
-      position: relative;
-      display: inline-block;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 13px;
-      overflow: hidden;
-      letter-spacing: 1.5px;
       padding: 10px;
+      font-size: 15px;
+      margin: 5px 0;
     }
 
-    @media screen and (min-width: 767px) {
-      .grid-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding-bottom: 100px;
-        gap: 5px;
-        margin-top: 50px;
-
-        padding-top: 25px;
-      }
-      .filterbutton {
-        padding: 10px;
-        font-size: 15px;
-        margin: 5px 0;
-      }
+    .stortbillede img {
+      width: 100%;
     }
-  </style>
-</MainLayout>
+  }
+</style>

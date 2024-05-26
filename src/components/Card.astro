@@ -3,54 +3,55 @@ const { data } = Astro.props;
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
+<!-- Gør så der bliver hentet items fra den valgte kategori -->
 <article class={`grid-item ${data.category}`} data-category={data.category}>
-  <!-- Billede fra databasen + alttext -->
+  <!-- Billede fra databasen og info om produkter -->
   <a href={`/products/${data.slug}`}>
-    <img class="image" src={data.image_front} alt={data.alttext} />
+    <img class="image" src={data.image_front} />
+    <img class="image2" src={data.image_person} />
   </a>
-  <!-- <div class="item-info">
-    <a href={`/products/${data.slug}`}> -->
-  <!-- brand_front = navn på produkt i listeview ''overskrift''' -->
-  <!-- <h3 class="h3">{data.name}</h3>
-    </a> -->
-  <!-- price = pris på produkt -->
-  <!-- <h4 class="h4">{data.price}</h4>
-    {data.soldout && <h4 class="soldout">{data.soldout.toLowerCase() === "soldout" ? "Sold Out" : data.soldout}</h4>} -->
-  <!-- // linket til produktet med en dynamisk slug. Viser "SHOP" hvis prisen ikke er markeret som "soldout". -->
-  {
-    // data.price && data.price.toLowerCase() !== "soldout" && (
-    //   // knap der linker til det gældende produkt
-    //   <button type="button" name="btn">
-    //     <a class="knap" href={`/products/${data.slug}`}>
-    //       <p>SHOP</p>
-    //     </a>
-    //   </button>
-    // )
-  }
+
+  <!-- "tekstfelt" der skal ligge over billederne på mobil -->
+  <div class="info">
+    <a href={`/products/${data.slug}`}>
+      <h3>{data.name}</h3>
+    </a>
+    <h3>{data.price} DKK</h3>
+    <button type="button" name="btn">
+      <a class="knap" href="/cart">
+        <p>ADD TO CART</p>
+      </a>
+    </button>
+  </div>
 </article>
 
 <style>
-  article {
-    outline-color: #ab1f27;
+  .image2 {
+    display: none;
   }
   /* knap */
+
+  .knap {
+    text-decoration: none;
+  }
   button {
-    color: #7a1c44;
-    font-size: 16px;
+    font-family: Avenir Next;
+    color: #ffffff;
+    font-size: 15px;
     border: none;
-    padding: 2px 50px;
+    padding-left: 5%;
+    padding-right: 5%;
     cursor: pointer;
-    margin-top: 10px;
-    background-color: transparent;
-    border: 1px solid #7a1c44;
+    text-decoration: none;
+    background-color: #ab1f27;
   }
+
   button p {
-    font-family: var(--font-family-roman);
-    color: var(--cta-text);
-  }
-  button:hover {
-    background-color: #7a1c44;
     color: white;
+  }
+
+  button:hover {
+    color: black;
   }
   button:hover p {
     color: white;
@@ -60,53 +61,73 @@ import MainLayout from "../layouts/MainLayout.astro";
     display: none;
   }
   /* tekst - brand, pris  */
-  .item-info {
-    padding: 10px;
-    text-align: center;
-    padding-bottom: 30px;
+  .info {
+    width: 100%;
+    height: 100%;
+    background-color: #d9d9d97d;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-top: -100px;
   }
+
   /* stil for prisen */
-  .h4 {
-    font-family: var(--font-family-roman);
-    font-weight: 100 !important;
-  }
   /* stil for mærket */
-  .h3 {
-    font-family: var(--font-family-roman);
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding-bottom: 100px;
+  h3 {
+    font-size: 10px;
+    font-family: Avenir Next;
+    font-weight: 400;
+    padding:;
   }
   .grid-item {
-    text-align: center;
-    padding: 10px;
     outline: 5px solid #ab1f27;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centerer indholdet vandret */
+    justify-content: space-between; /* Fordeler pladsen jævnt mellem elementerne */
+    margin-left: -8px;
+    margin-right: -8px;
   }
 
   /* styling for billeder */
+
   .image {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .knap:hover {
     text-decoration: none;
   }
-  /* styling på soldout - den ligger med en <p> rundt om som er span stylet i koden ^ */
-  .soldout {
-    color: var(--cta-text);
-    font-family: var(--font-family-medium);
+
+  .info a {
+    color: black;
+    text-decoration: none;
   }
-  @media screen and (min-width: 767px) {
-    /* billedestørrelse stor skærm */
+
+  @media screen and (min-width: 800px) {
+    h3 {
+      font-size: 15px;
+    }
     .image {
+      display: block;
       object-fit: cover;
     }
 
-    /* produktinformation i desktop */
-    .item-info {
-      margin-top: 20px;
+    .info {
+      display: none;
+    }
+
+    .grid-item:hover .info {
+      display: block;
+      margin-top: -150px;
+    }
+
+    .grid-item:hover .image {
+      display: none;
+    }
+
+    .grid-item:hover .image2 {
+      display: block;
+      width: 100%;
     }
   }
 </style>
