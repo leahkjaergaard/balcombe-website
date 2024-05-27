@@ -39,7 +39,7 @@ const { myData } = Astro.props;
 
       <div class="text-container" id="sticky-text-container">
         <h1>{myData.name}</h1>
-        <h2>{myData.price}</h2>
+        <h2>{myData.price},-</h2>
         <div class="btn-container">
           <!-- 
             Tjek om produktet er udsolgt (soldout_1 === 'soldout').
@@ -75,6 +75,10 @@ const { myData } = Astro.props;
 </MainLayout>
 
 <style>
+  .product-section {
+    color: green;
+  }
+
   .gridbilleder {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

@@ -4,6 +4,13 @@
   --background-color: #ffffff;
 }
 
+@font-face {
+  font-family: "MyFont";
+  src: url("/NeonVampire.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,4 +21,7 @@ img {
   width: 100%;
   height: auto;
   display: block;
+}
+#articles-container .grid-item.hide {
+  display: none;
 }

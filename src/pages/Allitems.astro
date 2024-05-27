@@ -35,7 +35,7 @@ console.log(data);
   <section class="grid-container" id="articles-container">
     {data.map((item) => <Card data={item} key={item.id} />)}
 
-    <!-- <div class="stortbillede"><img src="public/billeder/test2.png" alt="" /></div> -->
+    <div class="stortbillede"><img src="/Billeder/test2.png" alt="" /></div>
   </section>
 
   <p>NO MORE PRODUCTS</p>
@@ -60,6 +60,24 @@ console.log(data);
 
       // Filtrer artikler baseret på det valgte filter
       const cat = clickedBtn.dataset.category;
+
+      //Ændrer billede for hver category
+      if (cat === "tops") {
+        document.querySelector(".stortbillede img").src = "/Billeder/test.webp";
+      }
+
+      if (cat === "pants") {
+        document.querySelector(".stortbillede img").src = "/Billeder/sarah1.webp";
+      }
+
+      if (cat === "accessories") {
+        document.querySelector(".stortbillede img").src = "/Billeder/sarah1.webp";
+      }
+
+      if (cat === "hoodies") {
+        document.querySelector(".stortbillede img").src = "/Billeder/sarah1.webp";
+      }
+
       document.querySelectorAll("article.grid-item").forEach((art) => {
         console.log(art.dataset.category);
         if (art.dataset.category === cat || cat === "all") {
@@ -74,6 +92,11 @@ console.log(data);
 <Footer />
 
 <style>
+  /* Stort billede på siderne */
+  .stortbillede {
+    grid-column: 3/-1;
+    grid-row: 1/3;
+  }
   p {
     font-family: Avenir Next;
     font-size: 12px;
@@ -96,9 +119,6 @@ console.log(data);
   }
 
   /* id til javascript */
-  .hide {
-    display: none;
-  }
 
   .filter {
     list-style: none;
