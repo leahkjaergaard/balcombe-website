@@ -3,7 +3,9 @@ const { title } = Astro.props;
 ---
 
 <hr />
-<h1>{title}</h1>
+<div class="banner">
+  <h1 class="banner-title">{title}</h1>
+</div>
 <hr />
 
 <style>
@@ -13,6 +15,7 @@ const { title } = Astro.props;
     font-size: 24px;
     text-align: center;
     color: #ab1f27;
+    padding: 20px;
   }
 
   hr {
@@ -22,6 +25,7 @@ const { title } = Astro.props;
   @media screen and (min-width: 800px) {
     h1 {
       font-size: 90px;
+      padding: 40px;
     }
     hr {
       width: 100%;

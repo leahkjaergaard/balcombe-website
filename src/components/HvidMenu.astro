@@ -55,8 +55,8 @@ import Styles from "../Style/styles.css";
     <nav id="menu">
       <ul>
         <input type="text" id="search2" name="search" placeholder="SEARCH" />
-        <li><a href="allitems">SHOP</a></li>
-        <li><a href="about">ABOUT</a></li>
+        <li><a href="Allitems">SHOP</a></li>
+        <li><a href="About">ABOUT</a></li>
       </ul>
     </nav>
   </div>
@@ -79,14 +79,12 @@ import Styles from "../Style/styles.css";
   button:hover {
     color: var(--red);
   }
-  header {
-  }
 
   a {
     color: #ffffff;
   }
   a:hover {
-    color: var(--red);
+    color: #ab1f27;
   }
 
   .ikonerhvid a svg {
@@ -95,21 +93,23 @@ import Styles from "../Style/styles.css";
   }
 
   .ikonerhvid a:hover svg {
-    fill: #000000;
+    fill: #ab1f27;
   }
   .grid {
     display: flex;
   }
 
-  p {
+  /* Styling på logo (font-face ligger i style.css*/
+  a p {
     display: block;
     font-size: 1.5rem;
-    font-family: Neon Vampire;
+    font-family: "Times New Roman", Times, serif;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 8.5625rem;
     z-index: 2;
+    margin-top: 25px;
   }
   .ikonerhvid {
     display: block;
@@ -148,6 +148,8 @@ import Styles from "../Style/styles.css";
     gap: 20px;
     font-size: 20px;
     font-family: Avenir Next;
+    margin-top: 25px;
+    margin-left: 22px;
   }
 
   #menu a {
@@ -156,7 +158,7 @@ import Styles from "../Style/styles.css";
   }
 
   #menu a:hover {
-    color: #000000;
+    color: #ab1f27;
     transition: 0.1s;
   }
 
@@ -171,6 +173,7 @@ import Styles from "../Style/styles.css";
       color: #000000;
       background-color: #ffffff;
       border-color: #000000;
+      margin-bottom: 58px;
     }
     #search2 {
       display: block;
@@ -193,7 +196,7 @@ import Styles from "../Style/styles.css";
     }
 
     a {
-      color: #ffffff;
+      color: #000000;
       font-family: Avenir Next;
       font-size: 100pxx;
     }
@@ -269,7 +272,6 @@ import Styles from "../Style/styles.css";
       padding-top: 100px;
       background: #ffffff;
     }
-
     #menu ul {
       padding: 0;
     }
