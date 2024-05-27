@@ -26,10 +26,16 @@ import MainLayout from "../layouts/MainLayout.astro";
 </article>
 
 <style>
+  /* billeder  */
   .image2 {
     display: none;
   }
+
   /* knap */
+
+  .knap:hover {
+    text-decoration: none;
+  }
 
   .knap {
     text-decoration: none;
@@ -53,13 +59,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   button:hover {
     color: black;
   }
-  button:hover p {
-    color: white;
-  }
-  /* id til javascript */
-  .hide {
-    display: none;
-  }
+
   /* tekst - brand, pris  */
   .info {
     width: 100%;
@@ -71,30 +71,11 @@ import MainLayout from "../layouts/MainLayout.astro";
     margin-top: -70px;
   }
 
-  /* stil for prisen */
-  /* stil for mærket */
   h3 {
     font-size: 10px;
     font-family: Avenir Next;
     font-weight: 400;
     padding:;
-  }
-  .grid-item {
-    outline: 5px solid #ab1f27;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centerer indholdet vandret */
-    justify-content: space-between; /* Fordeler pladsen jævnt mellem elementerne */
-  }
-
-  /* styling for billeder */
-
-  .image {
-    width: 100%;
-    height: auto;
-  }
-  .knap:hover {
-    text-decoration: none;
   }
 
   .info a {
@@ -102,20 +83,40 @@ import MainLayout from "../layouts/MainLayout.astro";
     text-decoration: none;
   }
 
+  /* selve kortet som vises på "all items" */
+  .grid-item {
+    outline: 5px solid #ab1f27;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* billeder */
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
   @media screen and (min-width: 800px) {
+    /* knap */
     .knap {
       padding-bottom: -50px;
+    }
+
+    /* tekst */
+
+    .info {
+      display: none;
     }
     h3 {
       font-size: 15px;
     }
+
+    /* billeder */
+
     .image {
       display: block;
       object-fit: cover;
-    }
-
-    .info {
-      display: none;
     }
 
     .grid-item:hover .info {

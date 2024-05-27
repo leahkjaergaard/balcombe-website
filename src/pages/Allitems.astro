@@ -38,7 +38,8 @@ console.log(data);
   <section class="grid-container" id="articles-container">
     {data.map((item) => <Card data={item} key={item.id} />)}
 
-    <div class="stortbillede"><img src="/Billeder/testall2.png" alt="" /></div>
+    <!-- Stort billede som ligger i siden  -->
+    <div class="stortbillede"><img src="/Billeder/testall.webp" alt="" /></div>
   </section>
 
   <p>NO MORE PRODUCTS</p>
@@ -85,7 +86,7 @@ console.log(data);
 
       const newTitle = categoryTitles[cat] || "SHOP";
       document.title = newTitle; // Opdaterer dokumenttitlen
-      document.querySelector(".banner-title").textContent = newTitle; // Opdaterer bannertitlen (forudsætter at du har en klasse 'banner-title' i din Banner komponent)
+      document.querySelector(".banner-title").textContent = newTitle; // Opdaterer bannertitlen
 
       document.querySelectorAll("article.grid-item").forEach((art) => {
         if (art.dataset.category === cat || cat === "all") {
@@ -176,7 +177,7 @@ console.log(data);
     }
   }
 
-  /*andet*/
+  /* tekst */
 
   p {
     font-family: Avenir Next;
@@ -194,6 +195,7 @@ console.log(data);
     color: #ab1f27;
   }
 
+  /* grids  */
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -207,6 +209,7 @@ console.log(data);
     background-color: var(--background-color);
   }
 
+  /* billeder  */
   .image_front {
     width: 100%;
     height: auto;
@@ -214,11 +217,19 @@ console.log(data);
   }
 
   @media screen and (min-width: 800px) {
+    /* billeder  */
+
     .stortbillede {
       grid-column: 3/-1;
       grid-row: 1/3;
       outline: 5px solid #ab1f27;
     }
+
+    .stortbillede img {
+      width: 100%;
+    }
+
+    /* grids */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -227,14 +238,12 @@ console.log(data);
       margin-top: 10px;
     }
 
+    /* knap */
+
     .filterbutton {
       padding: 10px;
       font-size: 15px;
       margin: 5px 0;
-    }
-
-    .stortbillede img {
-      width: 100%;
     }
   }
 </style>
