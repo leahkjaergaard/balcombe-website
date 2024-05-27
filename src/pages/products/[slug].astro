@@ -1,6 +1,8 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-const title = "hej";
+import Banner from "../../components/Banner.astro";
+import Footer from "../../components/Footer.astro";
+const title = "BALCOMBE";
 
 // funktion til at generere statiske stier og props baseret på API
 export async function getStaticPaths() {
@@ -24,107 +26,114 @@ const { myData } = Astro.props;
 ---
 
 <MainLayout title={title}>
+  <Banner title={myData.name} />
+  <div class="testtest">
+    <ul class="brodkrumme">
+      <li><a href="/">HOME</a></li>
+      <li><a href="allitems">SHOP</a></li>
+    </ul>
+  </div>
   <section class="product-section">
-    <a class="backbtn" href="/allitems/">
-      <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.93934 10.9393C4.35355 11.5251 4.35355 12.4749 4.93934 13.0607L14.4853 22.6066C15.0711 23.1924 16.0208 23.1924 16.6066 22.6066C17.1924 22.0208 17.1924 21.0711 16.6066 20.4853L8.12132 12L16.6066 3.51472C17.1924 2.92893 17.1924 1.97919 16.6066 1.3934C16.0208 0.807614 15.0711 0.807614 14.4853 1.3934L4.93934 10.9393ZM36 10.5L6 10.5L6 13.5L36 13.5L36 10.5Z" fill="#7A1C44"></path>
-      </svg>
-    </a>
-
     <div class="container">
       <div class="image-container">
-        <!-- billeder med alt-text -->
+        <!-- billeder med tekst -->
+        <img class="stortbillede" src={myData.image_person} alt="" />
+      </div>
+      <div class="gridbilleder_mobil">
         <img src={myData.image_front} alt="" />
+        <img src={myData.image_back} alt="" />
+        <img src={myData.image_front} alt="" />
+        <img src={myData.image_front} alt="" />
+        <img src={myData.image_back} alt="" />
       </div>
 
       <div class="text-container" id="sticky-text-container">
-        <h1>{myData.name}</h1>
-        <h2>{myData.price},-</h2>
-        <div class="btn-container">
-          <!-- 
-            Tjek om produktet er udsolgt (soldout_1 === 'soldout').
-            Hvis ikke udsolgt, vis knappen.
-          -->
-          <!-- {myData.soldout && <h4 class="soldout">{myData.soldout.toLowerCase() === "soldout" ? "Sold Out" : myData.soldout}</h4>}
-
-          { -->
-          <!-- Vis kun knappen, hvis produktet ikke er udsolgt myData.price && myData.price.toLowerCase() !== "soldout" && ( -->
-          <button className="btn" type="button" name="btn">
-            <p>SHOP</p>
-          </button>
-        </div>
+        <h2>{myData.name}</h2>
+        <h2>{myData.price} DKK</h2>
+        <div class="btn-container"></div>
         <div class="info_copy"></div>
         <div class="info">
-          <h3>{myData.name}</h3>
-          <h3>{myData.price}</h3>
-          <h3>{myData.description}</h3>
+          <p class="description">{myData.description}</p>
+          <p class="model">The model is wearing a size SMALL</p>
         </div>
-        <div class="model">
-          <div class="vintage-text"></div>
+        <hr class="foerstehr" />
+        <div class="size">
+          <p>SMALL</p>
+          <p>MEDIUM</p>
+          <p>LARGE</p>
+        </div>
+        <hr />
+        <div class="antal_cart">
+          <button className="btn" type="button" name="btn">
+            <p>ADD TO CART</p>
+          </button>
+          <button className="btn" type="button" name="btn">
+            <p>ADD TO CART</p>
+          </button>
+        </div>
+        <div class="undercart">
+          <h3>DETAILS</h3>
+          <h3>SIZE GUIDE</h3>
+          <h3>SHIPPNG</h3>
+          <h3>HELP</h3>
         </div>
       </div>
     </div>
-    <div class="gridbilleder">
+    <div class="desktop">
+      <img src={myData.image_front} alt="" />
+      <img src={myData.image_back} alt="" />
       <img src={myData.image_front} alt="" />
       <img src={myData.image_front} alt="" />
-      <img src={myData.image_front} alt="" />
-      <img src={myData.image_front} alt="" />
-      <img src={myData.image_front} alt="" />
+      <img src={myData.image_back} alt="" />
     </div>
   </section>
 </MainLayout>
+<Footer />
 
 <style>
-  .product-section {
-    color: green;
+  /* tekst */
+
+  .text-container {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
-  .gridbilleder {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+  .model {
+    margin-top: 20px;
   }
-  h1 {
-    font-family: var(--font-family-medium);
-    font-size: 30px;
-    font-weight: 100;
-  }
-
-  h2 {
-    font-family: var(--font-family-light);
-    font-size: 25px;
-    padding-bottom: 20px;
-    font-weight: 100;
-  }
-
-  p {
-    font-family: var(--font-family-light);
-    font-size: 17px;
-  }
-  .info_copy p {
-    padding: 20px;
-    text-align: center;
-  }
-
   h3 {
-    font-family: var(--font-family-light);
-    font-size: 18px;
-    font-weight: 100;
+    font-family: Avenir Next;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ab1f27;
   }
-  p {
-    font-weight: 100;
+  h2 {
+    font-family: Avenir Next;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ab1f27;
   }
 
-  .soldout {
-    color: var(--cta-text);
-    font-size: 20px;
+  p {
+    font-family: Avenir Next;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ab1f27;
   }
+
+  .description {
+    margin-top: 20px;
+  }
+
+  /* vælge antal og add to cart */
+
   button {
+    padding: 10px;
     font-size: 18px;
-    color: var(--cta-text);
-    background-color: transparent;
+    color: #ffffff;
+    background-color: #ab1f27;
     border: 2px solid var(--cta-text);
-    padding: 10px 110px;
     cursor: pointer;
     letter-spacing: 1px;
     transition:
@@ -133,28 +142,116 @@ const { myData } = Astro.props;
   }
 
   button p {
-    color: var(--cta-text);
-  }
-
-  button:hover {
-    background-color: var(--cta-text);
-    color: white;
-    border: 2px solid transparent;
+    color: #ffffff;
   }
 
   button:hover p {
-    color: white;
+    color: #000000;
+  }
+  .undercart {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
   }
 
-  svg {
-    display: block;
-    top: 10%;
-    left: 3%;
-    scale: 80%;
-    color: var(--cta-text);
-    text-decoration: none;
-    cursor: pointer;
+  .antal_cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  /* størrelse  */
+
+  .foerstehr {
+    margin-top: 30px;
+  }
+  hr {
+    color: #ab1f27;
+  }
+  .size {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  /* filter og brødkrumme */
+
+  .testtest {
+    display: flex;
+    width: 100%;
+  }
+  ul.filter {
+    list-style: none;
     position: absolute;
+    right: 30px;
+    margin-left: 30%;
+    margin-top: 26px;
+  }
+  ul.filter li {
+    display: inline;
+    font-size: 15px;
+  }
+
+  ul.filter li + li:before {
+    padding: 2px;
+    color: #ab1f27;
+    content: "/\00a0"; /* fundet på nettet*/
+  }
+
+  ul.filter li a {
+    color: #ab1f27;
+    text-decoration: none;
+    font-family: Avenir Next;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  ul.brodkrumme {
+    padding: 26px 25px;
+    list-style: none;
+  }
+
+  ul.brodkrumme li {
+    display: inline;
+    font-size: 15px;
+  }
+
+  ul.brodkrumme li + li:before {
+    padding: 2px;
+    color: #ab1f27;
+    content: "/\00a0"; /* fundet på nettet*/
+  }
+
+  ul.brodkrumme li a {
+    color: #ab1f27;
+    text-decoration: none;
+    font-family: Avenir Next;
+    font-size: 10px;
+  }
+
+  /* billeder  */
+
+  .desktop {
+    display: none;
+  }
+
+  .stortbillede {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gridbilleder_mobil {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
   }
 
   .product-section {
@@ -178,67 +275,68 @@ const { myData } = Astro.props;
     height: auto;
     padding-bottom: 20px;
   }
-  .vintage-text,
-  .vintage-text p {
-    margin-top: 4rem;
-    text-align: center;
-    font-size: 16px;
-  }
-  .vintage-text {
-    border-bottom: 0.5px solid var(--cta-text);
-    padding-bottom: 80px;
+
+  /* media query til brødkrumme og kategorier */
+  @media screen and (min-width: 1250px) {
+    ul.filter li a {
+      font-size: 20px;
+    }
+    ul.brodkrumme li a {
+      font-size: 20px;
+    }
+
+    ul.filter li {
+      display: inline;
+      font-size: 20px;
+    }
+    ul.brodkrumme li {
+      display: inline;
+      font-size: 20px;
+    }
+
+    ul.filter {
+      right: 40px;
+    }
   }
 
-  .info,
-  .model {
-    padding-top: 60px;
-    line-height: 2rem;
-    text-align: left;
-    padding: 45px;
-  }
-  .text-container {
-    text-align: center;
-    margin-top: 10px;
-  }
-  @media only screen and (min-width: 768px) {
-    .product-section {
-      margin-top: 150px;
+  /* alm media query */
+  @media only screen and (min-width: 1000px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 150px;
+      width: 90%;
     }
+    /* billeder */
+    .stortbillede {
+      width: 100%;
+    }
+    .desktop {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .gridbilleder_mobil {
+      display: none;
+    }
+
+    .container img {
+      width: 50%;
+    }
+
+    /* tekst */
+
+    button p {
+      font-size: 20px;
+    }
+
     .text-container {
       text-align: left;
       flex: 1;
       top: 0;
       padding: 20px;
       box-sizing: border-box;
-    }
-    button p {
-      font-size: 20px;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 150px;
-      max-width: 1200px;
-    }
-
-    .image-container {
-      overflow-y: auto;
-      max-height: 100vh;
-      scrollbar-width: thin;
-      width: 100%;
-      flex: 1;
-    }
-    .btn-container {
-      justify-content: start;
-      margin-top: 40px;
-      padding-bottom: 30px;
-    }
-    .info_copy p {
-      margin-top: 40px;
-      margin-bottom: 40px;
-      text-align: start;
-      padding: 0;
     }
     h1 {
       padding-bottom: 10px;
@@ -247,41 +345,10 @@ const { myData } = Astro.props;
     }
 
     h2 {
-      padding-bottom: 30px;
-      text-align: left;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      padding-bottom: 20px;
-    }
-
-    .info,
-    .model {
-      line-height: 2rem;
-      text-align: left;
-      padding: 2px;
+      font-size: 35px;
     }
     p {
-      font-size: 15px;
-    }
-    .info {
-      padding-bottom: 50px;
-      padding-top: 1rem;
-    }
-    .vintage-text {
-      padding-top: 50px;
-      padding-bottom: 30px;
-      text-align: left;
-    }
-    .vintage-text p {
-      text-align: left;
-      font-size: 13.5px;
-    }
-    svg {
-      display: block;
-      top: 13%;
-      left: 19%;
+      font-size: 20px;
     }
   }
 </style>

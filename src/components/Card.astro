@@ -67,7 +67,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     background-color: #d9d9d97d;
     padding-left: 10px;
     padding-bottom: 10px;
-    margin-top: -100px;
+    padding-top: 10px;
+    margin-top: -70px;
   }
 
   /* stil for prisen */
@@ -84,8 +85,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     flex-direction: column;
     align-items: center; /* Centerer indholdet vandret */
     justify-content: space-between; /* Fordeler pladsen jævnt mellem elementerne */
-    /* margin-left: -8px;
-    margin-right: -8px; */
   }
 
   /* styling for billeder */
@@ -104,6 +103,9 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
 
   @media screen and (min-width: 800px) {
+    .knap {
+      padding-bottom: -50px;
+    }
     h3 {
       font-size: 15px;
     }
