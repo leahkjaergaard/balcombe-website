@@ -6,12 +6,16 @@ import Styles from "../Style/styles.css";
   const onLoad = () => {
     const burgerMenu = document.querySelector("#burger_menu");
     const menu = document.querySelector("#menu");
+    const logo = document.querySelector("#logo");
+    const allesvg = document.querySelector(".ikonerhvid");
 
     if (burgerMenu && menu) {
       burgerMenu.addEventListener("click", function () {
         console.log("Burger menu clicked");
         burgerMenu.classList.toggle("close");
         menu.classList.toggle("overlay");
+        logo.classList.toggle("burger");
+        allesvg.classList.toggle("svgblack");
       });
     }
   };
@@ -183,7 +187,14 @@ import Styles from "../Style/styles.css";
   }
 
   @media screen and (max-width: 800px) {
-    .search_ikon {
+    .burger {
+      color: #000000;
+    }
+
+    .svgblack {
+      stroke: black;
+    }
+    .b .search_ikon {
       display: none;
     }
 
@@ -290,6 +301,7 @@ import Styles from "../Style/styles.css";
       padding-top: 100px;
       background: #ffffff;
     }
+
     #menu ul {
       padding: 0;
     }
