@@ -13,6 +13,12 @@
 </div>
 
 <style>
+  @font-face {
+    font-family: "MyFont";
+    src: url("/NeonVampire.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
   .alt {
     margin-left: 10px;
     margin-right: 10px;
@@ -58,6 +64,7 @@
     border: none;
     background-color: #ab1f27;
     width: 175px;
+    cursor: pointer;
   }
 
   @media screen and (min-width: 800px) {
@@ -100,7 +107,7 @@
       position: absolute;
       display: block;
       color: #ab1f27;
-      font-family: Neon Vampire;
+      font-family: "MyFont", sans-serif;
       font-size: 9.896vw;
       margin-top: 10px;
     }

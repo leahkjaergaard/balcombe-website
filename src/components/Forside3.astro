@@ -24,14 +24,17 @@
 </div>
 
 <style>
+  @font-face {
+    font-family: "MyFont";
+    src: url("/NeonVampire.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
   .alt {
     margin-left: 10px;
     margin-right: 10px;
   }
 
-  :checked {
-    color: #000000;
-  }
   #email3 {
     padding: 5px;
     font-size: 12px;
@@ -116,6 +119,7 @@
     background-color: #ab1f27;
     width: 100%;
     margin-top: 20px;
+    cursor: pointer;
   }
 
   @media screen and (min-width: 800px) {
@@ -145,7 +149,7 @@
     button {
       padding: 5px;
       font-size: 1.75vw;
-      width: 26.7vw;
+      width: 25vw;
     }
     .tekst_billede {
       margin-left: 40px;
@@ -173,7 +177,7 @@
       position: absolute;
       display: block;
       color: #ab1f27;
-      font-family: Neon Vampire;
+      font-family: "MyFont", sans-serif;
       font-size: 9.896vw;
       margin-top: 10px;
     }
@@ -191,6 +195,12 @@
 
     .checkboxtekst {
       font-size: 12px;
+    }
+
+    button {
+      padding: 5px;
+      font-size: 1.75vw;
+      width: 26.7vw;
     }
   }
 </style>
