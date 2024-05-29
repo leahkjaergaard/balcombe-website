@@ -4,7 +4,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <!-- Gør så der bliver hentet items fra den valgte kategori -->
-<article class={`grid-item ${data.category}`} data-category={data.category}><!-- Billede fra databasen og info om produkter --> <a href={`/products/${data.slug}`} aria-label="produkt"> <img class="image" src={data.image_front} aria-label="billede af tøj-item" /> <img class="image2" src={data.image_person} aria-label="billede af tøj-item" /></a> <!-- "tekstfelt" der skal ligge over billederne på mobil --> <div class="info"><a href={`/products/${data.slug}`}> <h3>{data.name}</h3></a> <h3>{data.price} DKK</h3> <button type="button" name="btn"> <a class="knap" href="/cart"> <p>ADD TO CART</p></a></button></div></article>
+<article class={`grid-item ${data.category}`} data-category={data.category}>
+  <!-- Billede fra databasen og info om produkter -->
+  <a href={`/products/${data.slug}`} aria-label="produkt"> <img class="image" src={data.image_front} aria-label="billede af tøj-item" /> <img class="image2" src={data.image_person} aria-label="billede af tøj-item" /></a>
+  <!-- "tekstfelt" der skal ligge over billederne på mobil -->
+  <div class="info"><a href={`/products/${data.slug}`}> <h3>{data.name}</h3></a> <h3>{data.price} DKK</h3> <button type="button" name="btn"> <a class="knap" href="/cart"> <p>ADD TO CART</p></a></button></div>
+</article>
 <style>
   /* billeder */
   .image {
@@ -21,6 +26,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     opacity: 0;
     z-index: 1;
   }
+
+  /* grid */
   .grid-item {
     position: relative;
     outline: 5px solid #ab1f27;
@@ -32,7 +39,8 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
   .grid-item:hover .image {
     opacity: 1;
-  } /* knap */
+  }
+  /* knap */
   .knap:hover {
     text-decoration: none;
   }
@@ -55,7 +63,8 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
   button p:hover {
     color: black;
-  } /* tekst - brand, pris */
+  }
+  /* tekst - brand, pris */
   .info {
     width: 100%;
     position: absolute;
@@ -93,6 +102,8 @@ import MainLayout from "../layouts/MainLayout.astro";
       object-fit: cover;
       transition: opacity 0.3s ease-in-out;
     }
+
+    /* grid */
     .grid-item:hover .info {
       display: block;
       opacity: 1;

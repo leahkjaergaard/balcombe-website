@@ -34,32 +34,48 @@
 </div>
 
 <style>
+  hr {
+    color: white;
+  }
+
+  /* grid */
   .stortgrid {
     line-height: 1.5;
     padding: 10px;
   }
-  .mobil p {
-    color: #ffffff;
-  }
-  hr {
-    color: white;
-  }
-  a {
-    text-decoration: none;
-    color: #ffffff;
-  }
+
   .desktop {
     display: none;
   }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     color: #ffffff;
   }
+
+  /* tekst */
+  .mobil p {
+    color: #ffffff;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
   p {
     font-family: "AvenirNext";
     font-size: 12px;
     margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: -40px;
+    font-size: 12px;
+    font-family: "AvenirNext";
   }
 
   #email {
@@ -81,18 +97,17 @@
     color: white;
   }
 
-  ul {
-    list-style-type: none;
-    margin-left: -40px;
-    font-size: 12px;
-    font-family: "AvenirNext";
-  }
-
-  p {
-    color: #ffffff;
-  }
-
   @media screen and (min-width: 800px) {
+    /* tekst */
+    li {
+      width: 25ch;
+    }
+
+    .mobil {
+      display: none;
+    }
+
+    /* email og subscribe */
     #subscribe :hover {
       color: black;
     }
@@ -111,9 +126,8 @@
       background-color: #ab1727;
       color: #ffffff;
     }
-    li {
-      width: 25ch;
-    }
+
+    /* grids */
     .some {
       grid-column: 4 / span 2;
     }
@@ -127,9 +141,7 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
     }
-    .mobil {
-      display: none;
-    }
+
     .desktop {
       display: grid;
       grid-column: 4 / span 3;

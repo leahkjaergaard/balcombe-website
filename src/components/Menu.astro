@@ -71,6 +71,7 @@ import Styles from "../Style/styles.css";
 </header>
 
 <style>
+  /* søge felt */
   #search2 {
     display: none;
   }
@@ -84,11 +85,7 @@ import Styles from "../Style/styles.css";
     max-width: 200px;
   }
 
-  button:hover {
-    color: var(--red);
-  }
-  header {
-  }
+  /* tekst */
 
   a {
     color: #000000;
@@ -97,18 +94,19 @@ import Styles from "../Style/styles.css";
     color: #ab1f27;
   }
 
-  .ikonerhvid a svg {
-    fill: #000000;
-    transition: fill 0.3s;
-  }
-
-  .ikonerhvid a:hover svg {
-    fill: #ab1f27;
-  }
-  .grid {
+  #logo {
     display: flex;
   }
 
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    font-family: "AvenirNext";
+    margin-top: 25px;
+    margin-left: 22px;
+  }
   /* Styling på logo (font-face ligger i style.css*/
   p {
     display: block;
@@ -121,6 +119,20 @@ import Styles from "../Style/styles.css";
     z-index: 2;
     margin-top: 25px;
   }
+
+  /* ikoner  */
+  .ikonerhvid a svg {
+    fill: #000000;
+    transition: fill 0.3s;
+  }
+
+  .ikonerhvid a:hover svg {
+    fill: #ab1f27;
+  }
+  .grid {
+    display: flex;
+  }
+
   .ikonerhvid {
     display: block;
     position: absolute;
@@ -129,9 +141,7 @@ import Styles from "../Style/styles.css";
     z-index: 2;
   }
 
-  #logo {
-    display: flex;
-  }
+  /* burgermenu */
 
   #burger_menu {
     text-indent: -9999px;
@@ -152,16 +162,6 @@ import Styles from "../Style/styles.css";
     display: block;
   }
 
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    font-size: 20px;
-    font-family: "AvenirNext";
-    margin-top: 25px;
-    margin-left: 22px;
-  }
-
   #menu a {
     text-decoration: none;
     color: #000000;
@@ -169,7 +169,6 @@ import Styles from "../Style/styles.css";
 
   #menu a:hover {
     color: #ab1f27;
-    transition: 0.1s;
   }
 
   #menu {
@@ -177,9 +176,15 @@ import Styles from "../Style/styles.css";
   }
 
   @media screen and (max-width: 800px) {
+    /* ikoner */
     .search_ikon {
       display: none;
     }
+    .ikonerhvid {
+      margin-top: 29px;
+    }
+    /* søgefelt */
+
     #search {
       display: none;
       font-size: 12px;
@@ -199,13 +204,14 @@ import Styles from "../Style/styles.css";
       text-align: center;
     }
 
+    /* tekst */
+
     ul {
       list-style: none;
       display: block;
       gap: 20px;
       font-size: 20px;
       margin-left: 0;
-
       font-family: "AvenirNext";
     }
 
@@ -214,6 +220,8 @@ import Styles from "../Style/styles.css";
       font-family: "AvenirNext";
       font-size: 100pxx;
     }
+
+    /* burgermenu */
 
     #burger_menu {
       display: block;
@@ -300,10 +308,6 @@ import Styles from "../Style/styles.css";
       font-size: 12px;
       margin-bottom: 58px;
       text-decoration: none;
-    }
-
-    .ikonerhvid {
-      margin-top: 29px;
     }
   }
 </style>

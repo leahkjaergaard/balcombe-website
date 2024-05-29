@@ -14,7 +14,6 @@
     <input type="text" id="email3" name="email" placeholder="ENTER E-MAIL" aria-label="enter mail" />
     <div class="checkboxmedtekst">
       <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
-      <!--  HUSK AT ÆNDRE FARVE NÅR DER BLIVER TRYKKET -->
       <p class="checkboxtekst">By checking this box, i authorize the use of my personal data and will receive newsletters and other marketing communication</p>
     </div>
     <div class="knapmobil"><button>SUBSCRIBE</button></div>
@@ -24,20 +23,21 @@
 </div>
 
 <style>
+  /* font */
   @font-face {
     font-family: "MyFont";
     src: url("/NeonVampire.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
   }
-  #checkbox:checked {
-    background-color: black;
-  }
 
+  /* grid */
   .alt {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  /* form */
 
   #email3 {
     padding: 5px;
@@ -67,12 +67,7 @@
     display: none;
     margin-top: 20px;
   }
-  h3 {
-    font-size: 20px;
-    font-family: "AvenirNext";
-    font-weight: 400;
-    text-align: center;
-  }
+
   form {
     position: absolute;
     margin-top: -75%;
@@ -85,23 +80,6 @@
     padding: 20px;
     width: 70%;
   }
-  .desktop {
-    display: none;
-  }
-  h2 {
-    display: none;
-  }
-  h1 {
-    display: none;
-  }
-  .mobil_billede img {
-    width: 100%;
-    z-index: 1;
-  }
-
-  svg {
-    position: absolute;
-  }
 
   .knap {
     display: flex;
@@ -111,7 +89,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    margin-top: -100px; /* HJÆÆÆÆÆLP, knappen skal "sidde fast, så man stadig kan se den når man hiver ud i siden*/
+    margin-top: -100px;
   }
 
   button {
@@ -126,7 +104,37 @@
     cursor: pointer;
   }
 
+  /* tekst */
+  h3 {
+    font-size: 20px;
+    font-family: "AvenirNext";
+    font-weight: 400;
+    text-align: center;
+  }
+
+  h2 {
+    display: none;
+  }
+  h1 {
+    display: none;
+  }
+
+  /* billeder */
+  .desktop {
+    display: none;
+  }
+
+  .mobil_billede img {
+    width: 100%;
+    z-index: 1;
+  }
+
+  svg {
+    position: absolute;
+  }
+
   @media screen and (min-width: 800px) {
+    /* form */
     button:hover {
       color: #000000;
     }
@@ -142,9 +150,6 @@
       width: 30%;
     }
 
-    h3 {
-      font-size: 2.4vw;
-    }
     .knap {
       position: absolute;
       left: 80%;
@@ -158,18 +163,12 @@
       font-size: 1.75vw;
       width: 25vw;
     }
-    .tekst_billede {
-      margin-left: 40px;
-    }
-    .desktop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
 
-    .desktop img {
-      width: 100%;
-    }
+    /* tekst */
 
+    h3 {
+      font-size: 2.4vw;
+    }
     h2 {
       display: block;
       position: absolute;
@@ -178,7 +177,7 @@
       color: #ab1f27;
       font-weight: 400;
       font-size: 1.75vw;
-      margin-top: 10%; /* kig */
+      margin-top: 10%;
     }
     h1 {
       position: absolute;
@@ -189,8 +188,23 @@
       margin-top: 10px;
     }
 
+    /* billeder */
+    .tekst_billede {
+      margin-left: 40px;
+    }
+
+    .desktop img {
+      width: 100%;
+    }
+
     .mobil_billede img {
       display: none;
+    }
+
+    /* grids */
+    .desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
