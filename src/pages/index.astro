@@ -17,6 +17,37 @@ import Forside3 from "../components/Forside3.astro";
   <Footer />
 </MainLayout>
 
+<script>
+  //carousel
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // start med første slide
+    showSlide(currentSlide);
+
+    //
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  });
+</script>
+
 <style>
   /* styles.css */
 
@@ -66,33 +97,3 @@ import Forside3 from "../components/Forside3.astro";
     color: #ab1f27;
   }
 </style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    // Start with the first slide
-    showSlide(currentSlide);
-
-    // Assign functions to global scope for button click handlers
-    window.nextSlide = nextSlide;
-    window.prevSlide = prevSlide;
-  });
-</script>
