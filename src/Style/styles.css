@@ -24,3 +24,10 @@ img {
 #articles-container .grid-item.hide {
   display: none;
 }
+
+@font-face {
+  font-family: "AvenirNext";
+  src: url("/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
