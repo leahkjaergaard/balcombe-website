@@ -46,34 +46,28 @@ import Styles from "../Style/styles.css";
 </HvidLayout>
 
 <style>
+  /* font */
+
   @font-face {
     font-family: "AvenirNext";
     src: url("/AvenirNextLTPro-Regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
   }
+
+  /* body */
   body {
     margin: 0;
   }
+
+  html {
+    background-color: #ab1f27;
+  }
+  /* tekst */
   .citat2 {
     display: none;
   }
-  .bojler,
-  .sy,
-  .sarah2 {
-    display: none;
-  }
 
-  .toj {
-    margin-bottom: 40px;
-  }
-  .collage {
-    display: grid;
-    grid-template-collums: repeat(2, 1fr);
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .copy {
     width: 90%;
     margin-left: auto;
@@ -96,10 +90,40 @@ import Styles from "../Style/styles.css";
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* billeder */
+  .bojler,
+  .sy,
+  .sarah2 {
+    display: none;
+  }
+
+  .toj {
+    margin-bottom: 40px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .sarah {
     margin-left: 20px;
     margin-right: 20px;
   }
+
+  /* grid til collage */
+  .collage {
+    display: grid;
+    grid-template-collums: repeat(2, 1fr);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* tekst */
+
   h2 {
     font-family: "AvenirNext";
     font-weight: 400;
@@ -123,15 +147,7 @@ import Styles from "../Style/styles.css";
     color: #ffffff;
     text-decoration: none;
   }
-  html {
-    background-color: #ab1f27;
-  }
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
   h1 {
     font-size: 24px;
     color: #ffffff;
@@ -139,13 +155,48 @@ import Styles from "../Style/styles.css";
   }
 
   @media screen and (min-width: 800px) {
+    /* billeder */
+
     .billede_og_tekst {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+
+    .bojler {
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    /* tekst */
     .findus {
       margin-top: 40px;
     }
+
+    .citat {
+      display: none;
+    }
+
+    .copy {
+      width: 70%;
+      margin-left: 10%;
+      margin-top: -23px;
+    }
+    h2 {
+      font-size: 35px;
+    }
+
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 20px;
+    }
+
+    .citat {
+      width: 80%;
+    }
+
+    /* collage */
+
     .bojler,
     .sy,
     .sarah2 {
@@ -164,10 +215,6 @@ import Styles from "../Style/styles.css";
       grid-column: 1 / span 2;
     }
 
-    .bojler {
-      width: 80%;
-      margin-left: 10%;
-    }
     .collage {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -188,32 +235,9 @@ import Styles from "../Style/styles.css";
       width: 100%;
     }
 
-    .citat {
-      display: none;
-    }
-
-    .copy {
-      width: 70%;
-      margin-left: 10%;
-      margin-top: -23px;
-    }
-    h2 {
-      font-size: 35px;
-    }
-
     .sarah {
       width: 80%;
       margin-left: 20%;
-    }
-
-    p {
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 20px;
-    }
-
-    .citat {
-      width: 80%;
     }
   }
 </style>
