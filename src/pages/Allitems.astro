@@ -39,7 +39,7 @@ console.log(data);
     {data.map((item) => <Card data={item} key={item.id} />)}
 
     <!-- Stort billede som ligger i siden  -->
-    <div class="stortbillede"><img src="/img/testall.webp" alt="" /></div>
+    <div class="stortbillede"><img src="/Billeder/testall.webp" alt="" /></div>
   </section>
 
   <p>NO MORE PRODUCTS</p>
@@ -66,10 +66,10 @@ console.log(data);
 
       // Ændrer billede for hver category
       const categoryImages = {
-        all: "/img/testall2.webp",
-        tops: "/img/tops.webp",
-        pants: "/img/pants.webp",
-        accessories: "/img/accessories.webp",
+        all: "/Billeder/testall2.webp",
+        tops: "/Billeder/tops.webp",
+        pants: "/Billeder/pants.webp",
+        accessories: "/Billeder/accessories.webp",
         hoodies: "/Billeder/hoodie.webp",
       };
 
@@ -180,7 +180,7 @@ console.log(data);
   /* tekst */
 
   p {
-    font-family: "AvenirNext";
+    font-family: Avenir Next;
     font-size: 12px;
     color: #ab1f27;
     text-align: center;
@@ -188,7 +188,7 @@ console.log(data);
     margin-bottom: 20px;
   }
   h1 {
-    font-family: "AvenirNext";
+    font-family: Avenir Next;
     font-weight: 500;
     font-size: 24px;
     text-align: center;
@@ -202,6 +202,11 @@ console.log(data);
     padding-bottom: 100px;
     gap: 5px;
     margin-top: 25px;
+  }
+  .grid-item {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--background-color);
   }
 
   /* billeder  */
